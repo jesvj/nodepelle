@@ -1,0 +1,33 @@
+<NetworkDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://kayak.2codeornot2code.org/1.0" xsi:noNamespaceSchemaLocation="Definition.xsd">
+  <Document name="EstymaPelletBurner" version="0.01" author="jvj" company="Fusk Inc" date="1991-02-16">
+    CAN definition for Estyma Igneo control system for wood pellet burners.
+  </Document>
+  <Node id="1" name="Motor ACME"/>
+
+  <Bus name="Main" baudrate="125000">
+  	 <Message id="0x201" name="FanSpeed">
+  	 	<Producer>
+  	 		<NodeRef id="1"/>
+  	 	</Producer>
+  	 	<Signal name="FanSpeed" offset="16" length="16">
+            <Value type="unsigned" slope="0.04" intercept="0" unit="RPM" min="0" max="100"/>
+        </Signal>
+    </Message>
+  	<Message id="0x2C6" name="Temp1" triggered="true" interval="100">
+         <Notes>Some temperatures</Notes>
+         <Producer>
+           <NodeRef id="1"/>
+         </Producer>
+  	 	<Signal name="BoilerTemp" offset="0" length="16"/>
+  	 	<Signal name="HotWaterVesselTemp" offset="16" length="16"/>
+  	 	<Signal name="CentralTemp" offset="48" length="16"/>
+    </Message>
+  	<Message id="0x446" name="Feeder" triggered="true" interval="100">
+      <Notes>Pellet feeder state</Notes>
+         <Producer>
+           <NodeRef id="1"/>
+         </Producer>
+  	 	<Signal name="FeederState" offset="0" length="8"/>
+  	</Message>
+  </Bus>
+</NetworkDefinition>
