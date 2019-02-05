@@ -1,0 +1,7 @@
+{
+  "ThingSpeak": {
+      "channelId": "YOURNUMBERGOESHERE",
+      "apiRead": "APIREADKEYHERE",
+      "apiWrite": "APIWRITEKEYHERE"
+  }
+}
