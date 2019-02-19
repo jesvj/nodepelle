@@ -18,10 +18,10 @@
          <Producer>
            <NodeRef id="1"/>
          </Producer>
-  	 	<Signal name="BoilerTemp" offset="0" length="16"/>
-  	 	<Signal name="HotWaterVesselTemp" offset="16" length="16"/>
-  	 	<Signal name="CentralTemp" offset="48" length="16"/>
-    </Message>
+    	 	<Signal name="BoilerTemp" offset="0" length="16"/>
+    	 	<Signal name="HotWaterVesselTemp" offset="48" length="16"/>
+    	 	<Signal name="CentralTemp" offset="32" length="16"/>
+      </Message>
   	<Message id="0x446" name="Feeder" triggered="true" interval="100">
       <Notes>Pellet feeder state</Notes>
          <Producer>
