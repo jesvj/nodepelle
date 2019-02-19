@@ -1,3 +1,4 @@
+// Copied and translated from  https://github.com/kematic/pelle/blob/master/temperature.py
 var adc_max = 4096;
 var kelvin = 273.15;
 
@@ -23,7 +24,7 @@ function temp(sens, adc_value)
     }
     if (sens == 'CTP-02') //                # Rumtemperatur sensor
     {
-        a, b, c = __steinhart(0, 32560, 50, 3600, 100, 680);
+        a, b, c = steinhart(0, 32560, 50, 3600, 100, 680);
         r1 = 5600; //  # mangler verifikation
 
         t = calc(a, b, c, r1, adc_value + 1);
