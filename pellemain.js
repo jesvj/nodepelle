@@ -40,5 +40,13 @@ db_main.messages["Feeder"].signals["FeederState"].onChange(function(s) {
 
 function sendDataTS(chId, fieldId, apiWriteKey, val)
 {
-    https.get('https://api.thingspeak.com/update.json?api_key' + '=' + apiWriteKey + '&' + fieldId + '=' +  val);
+    try
+    {
+        https.get('https://api.thingspeak.com/update.json?api_key' + '=' + apiWriteKey + '&' + fieldId + '=' +  val);
+    }
+    catch(err)
+    {
+        console.log(err.message);
+    }
+
 }
